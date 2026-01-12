@@ -31,10 +31,14 @@ app.post("/chat", async (req, res) => {
     });
 
   } catch (err) {
+    console.error(err);
     res.status(500).json({ error: "AI error" });
   }
 });
 
-app.listen(3000, () =>
-  console.log("✅ Backend running at http://localhost:3000")
-);
+// ✅ IMPORTANT CHANGE (Render-compatible)
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`✅ Backend running on port ${PORT}`);
+});
