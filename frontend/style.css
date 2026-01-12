@@ -1,0 +1,152 @@
+:root {
+    --bg: #0b1020;
+    --card: #1a2238;
+    --text: #ffffff;
+    --user: #2d6cff;
+    --ai: #202a44;
+}
+
+body.light {
+    --bg: #f4f6ff;
+    --card: #ffffff;
+    --text: #0b1020;
+    --ai: #e9ecff;
+}
+
+body {
+    margin: 0;
+    font-family: Segoe UI, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* LOGIN */
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-card {
+    background: var(--card);
+    padding: 30px;
+    border-radius: 14px;
+    width: 300px;
+    text-align: center;
+}
+
+.login-logo {
+    width: 60px;
+    border-radius: 50%;
+}
+
+.login-title {
+    color: white;
+}
+
+.login-card input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+.login-card button {
+    width: 100%;
+    padding: 10px;
+    background: #2d6cff;
+    border: none;
+    border-radius: 8px;
+    color: white;
+}
+
+/* CHAT */
+.layout {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 220px;
+    background: var(--card);
+    padding: 20px;
+}
+
+.sidebar-logo {
+    width: 55px;
+    border-radius: 50%;
+}
+
+.brand {
+    color: white;
+}
+
+.sidebar button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #2d6cff;
+    color: white;
+}
+
+.logout {
+    background: #ff4d4d;
+}
+
+.chat-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#chat-box {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.user {
+    background: var(--user);
+    padding: 12px;
+    margin: 10px;
+    border-radius: 10px;
+    color: white;
+    align-self: flex-end;
+    max-width: 70%;
+}
+
+.ai {
+    background: var(--ai);
+    padding: 12px;
+    margin: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+}
+
+.input-box {
+    display: flex;
+    padding: 10px;
+    background: var(--card);
+}
+
+.input-box input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text);
+}
+
+.input-box button {
+    margin-left: 10px;
+    padding: 12px;
+    background: #2d6cff;
+    border: none;
+    border-radius: 8px;
+    color: white;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SnowGPT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+    <aside class="sidebar">
+        <img src="logo.jpeg" class="sidebar-logo">
+        <h2 class="brand">SnowGPT</h2>
+
+        <button onclick="toggleTheme()">🌙 / ☀️ Theme</button>
+        <button onclick="logout()" class="logout">Logout</button>
+    </aside>
+
+    <main class="chat-area">
+        <div id="chat-box"></div>
+
+        <div class="input-box">
+            <input id="user-input" placeholder="Ask SnowGPT...">
+            <button onclick="sendMessage()">➤</button>
+        </div>
+    </main>
+</div>
+
+<script src="chat.js"></script>
+<script src="script.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>
