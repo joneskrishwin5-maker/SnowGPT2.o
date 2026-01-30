@@ -35,21 +35,40 @@ async function sendMessage() {
     addUser(msg);
     input.value = "";
 
+    // 👇 Tell user backend may be waking up
+    addAI("⏳ Thinking...");
+
+    // 👇 Abort controller for timeout
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => {
+        controller.abort();
+    }, 60000); // 60 seconds wait
+
     try {
         const res = await fetch(
-            "https://snowgpt2-o-backend.onrender.com/chat",
+            "https://snowgpt-backend.onrender.com/chat",
             {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ message: msg })
+                body: JSON.stringify({ message: msg }),
+                signal: controller.signal
             }
         );
 
+        clearTimeout(timeoutId);
+
         const data = await res.json();
-        addAI(data.reply);
+
+        // Remove "Thinking..." message
+        chatBox.removeChild(chatBox.lastChild);
+
+        addAI(data.reply || "⚠️ No response from AI.");
 
     } catch (err) {
-        addAI("⚠️ Server error. Try again.");
+        // Remove "Thinking..." message
+        chatBox.removeChild(chatBox.lastChild);
+
+        addAI("⏳ Server is waking up. Please wait 30–40 seconds and send again.");
     }
 }
 
